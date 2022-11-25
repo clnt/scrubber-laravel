@@ -102,13 +102,13 @@ jobs:
           php -v
           ./vendor/phpunit/phpunit/phpunit --version
           ./vendor/phpunit/phpunit/phpunit --coverage-clover=coverage.xml
-#          export CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }}
-#          bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
+          export CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }}
+          bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
 
       - name: Upload code coverage
         run: |
-#          export CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }}
-#          bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
+          export CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }}
+          bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
 
       - name: Upload log artifacts
         uses: actions/upload-artifact@v2
