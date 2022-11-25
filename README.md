@@ -2,7 +2,7 @@
 <p>
 <a href="https://packagist.org/packages/clntdev/scrubber-laravel"><img src="https://poser.pugx.org/clntdev/scrubber-laravel/version" alt="Stable Build" /></a>
 <a href="https://github.com/clnt/scrubber-laravel/actions"><img src="https://github.com/clnt/scrubber-laravel/actions/workflows/.github-actions.yml/badge.svg" alt="CI Status" /></a>
-<a href="https://codecov.io/gh/clnt/scrubber-laravel"><img src="https://codecov.io/gh/clnt/scrubber-laravel/branch/production/graph/badge.svg?token=XD5TG940EV" alt="Code Coverage"/></a>
+<a href="https://codecov.io/gh/clnt/scrubber-laravel"><img src="https://codecov.io/gh/clnt/scrubber-laravel/branch/production/graph/badge.svg?token=LZ3SIO46CN"/></a>
 </p>
 Scrubber is a minimal PHP package with only one dependency, it allows you to define a PHP configuration file which can help update database fields with various predefined or random values.
 
