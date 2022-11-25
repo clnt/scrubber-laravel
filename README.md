@@ -1,10 +1,10 @@
-# Scrubber
+# Scrubber (Laravel Wrapper)
 <p>
 <a href="https://packagist.org/packages/clntdev/scrubber-laravel"><img src="https://poser.pugx.org/clntdev/scrubber-laravel/version" alt="Stable Build" /></a>
 <a href="https://github.com/clnt/scrubber-laravel/actions"><img src="https://github.com/clnt/scrubber-laravel/actions/workflows/.github-actions.yml/badge.svg" alt="CI Status" /></a>
 <a href="https://codecov.io/gh/clnt/scrubber-laravel"><img src="https://codecov.io/gh/clnt/scrubber-laravel/branch/production/graph/badge.svg?token=LZ3SIO46CN"/></a>
 </p>
-Scrubber is a minimal PHP package with only one dependency, it allows you to define a PHP configuration file which can help update database fields with various predefined or random values.
+Scrubber (Laravel Wrapper) is a simple Laravel wrapper that adds in a Facade and some useful artisan commands around a minimal PHP package called [Scrubber](https://github.com/clnt/scrubber), this allows you to define a PHP configuration file which can help update database fields with various predefined or random values.
 
 This is perfect for when you need a copy of a production database to work on and need to erase sensitive content.
 
@@ -20,6 +20,10 @@ The package relies on a valid PHP configuration file to function correctly, this
 
 If using the default location, create a `scrubber.php` file at the root of your Laravel project. If using an alternative then set the absolute path in the `config/scrubber.php` file.
 
+- A field can have a `primary_key` defined on it if you want to use an alternative column to fetch database records, the default is `id`.
+- A field can have a `handler` defined on it if you wish to override the detected handler.
+- A field can have a `type` defined on it which can be used to define the field as a certain data type such as `pid` for GDPR purposes (this is useful in the methods listed further down)
+
 Here is an example configuration used in the unit tests:
 
 ```php
@@ -30,6 +34,7 @@ use ClntDev\Scrubber\Handlers\FakerHandler;
 return [
     'users' => [
         'first_name' => [
+            'primary_key' => 'id',
             'value' => 'faker.firstName',
             'type' => 'pid',
         ],
