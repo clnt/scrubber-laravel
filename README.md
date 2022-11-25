@@ -4,6 +4,8 @@
 <a href="https://github.com/clnt/scrubber-laravel/actions"><img src="https://github.com/clnt/scrubber-laravel/actions/workflows/.github-actions.yml/badge.svg" alt="CI Status" /></a>
 <a href="https://codecov.io/gh/clnt/scrubber-laravel"><img src="https://codecov.io/gh/clnt/scrubber-laravel/branch/production/graph/badge.svg?token=LZ3SIO46CN"/></a>
 </p>
+
+
 Scrubber (Laravel Wrapper) is a simple Laravel wrapper that adds in a Facade and some useful artisan commands around a minimal PHP package called [Scrubber](https://github.com/clnt/scrubber), this allows you to define a PHP configuration file which can help update database fields with various predefined or random values.
 
 This is perfect for when you need a copy of a production database to work on and need to erase sensitive content.
