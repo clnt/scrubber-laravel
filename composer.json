@@ -1,0 +1,73 @@
+{
+  "description": "A Laravel package for scrubbing data from defined fields in a database",
+  "name": "clntdev/scrubber-laravel",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["laravel", "scrubber", "gdpr"],
+  "authors": [
+    {
+      "name": "Matt Clinton",
+      "email": "matt@mattc.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.2",
+    "illuminate/support": "^9.0",
+    "illuminate/database": "^9.0",
+    "illuminate/contracts": "^9.0",
+    "clntdev/scrubber": "^1.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "mockery/mockery": "^1.0",
+    "orchestra/testbench": "^7.0",
+    "phpunit/phpunit": "^9.5",
+    "symfony/var-dumper": "^6.0",
+    "squizlabs/php_codesniffer": "^3.7",
+    "timacdonald/log-fake": "^2.0",
+    "clntdev/coding-standards": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ClntDev\\LaravelScrubber\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/",
+      "Tests\\Database\\Factories\\": "tests/database/factories"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit",
+    "test:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "vendor/bin/phpunit --log-junit=coverage/phpunit.junit.xml --coverage-cobertura=coverage/cobertura.xml --coverage-text"
+    ],
+    "test-all": [
+      "@test-quality",
+      "@test"
+    ],
+    "test-quality": [
+      "@phpcs"
+    ],
+    "php-lint": "vendor/bin/parallel-lint --exclude vendor .",
+    "phpcs": "vendor/bin/phpcs ./src ./tests --runtime-set ignore_warnings_on_exit true --standard=./vendor/mattc/coding-standards/phpcs.xml",
+    "cbf": "vendor/bin/phpcbf ./src --standard=./vendor/mattc/coding-standards/phpcs.xml"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ClntDev\\LaravelScrubber\\ScrubberServiceProvider"
+      ],
+      "aliases": {
+        "Scrubber": "ClntDev\\LaravelScrubber\\Facades\\Scrubber"
+      }
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
