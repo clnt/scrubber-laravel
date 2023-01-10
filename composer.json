@@ -15,7 +15,7 @@
     "illuminate/support": "^9.0",
     "illuminate/database": "^9.0",
     "illuminate/contracts": "^9.0",
-    "clntdev/scrubber": "^1.0"
+    "clntdev/scrubber": "^1.0.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
